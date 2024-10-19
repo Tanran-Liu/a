@@ -1,24 +1,24 @@
 <template>
   <div class="container mt-5 text-center">
-      <div>
-          <h1>WEATHER APP</h1>
-          <div class="search-bar">
-              <input type="text" v-model="city" placeholder="Enter city name" class="search-input" />
-              <button @click="searchByCity" class="search-button">Search</button>
-          </div>
+    <div>
+      <h1>WEATHER APP</h1>
+      <div class="search-bar">
+        <input type="text" v-model="city" placeholder="Enter city name" class="search-input" />
+        <button @click="searchByCity" class="search-button">Search</button>
       </div>
+    </div>
   </div>
   <main class="container mt-5 text-center">
-      <div v-if="weatherData">
-          <h2>
-              {{ weatherData.name }}, {{ weatherData.sys.country }}
-          </h2>
-          <div>
-              <img :src="iconUrl" alt="Weather Icon" />
-              <p>{{ temperature }} °C</p>
-          </div>
-          <span>{{ weatherData.weather[0].description }}</span>
+    <div v-if="weatherData">
+      <h2>
+        {{ weatherData.name }}, {{ weatherData.sys.country }}
+      </h2>
+      <div>
+        <img :src="iconUrl" alt="Weather Icon" />
+        <p>{{ temperature }} °C</p>
       </div>
+      <span>{{ weatherData.weather[0].description }}</span>
+    </div>
   </main>
 </template>
 
@@ -46,7 +46,7 @@ export default {
     },
     iconUrl() {
       return this.weatherData
-        ? `http://api.openweathermap.org/img/w/${this.weatherData.weather[0].icon}.png`
+        ? `https://api.openweathermap.org/img/w/${this.weatherData.weather[0].icon}.png`
         : null;
     },
   },
