@@ -4,7 +4,7 @@
         <!-- JSON 数据格式化显示 -->
         <pre v-if="jsondata">{{ JSON.stringify(jsondata, null, 2) }}</pre>
         <!-- 错误信息显示 -->
-        <p v-if="error" class="text-danger">Error fetching data: {{ error.message }}</p>
+        <p v-if="error" class="text-danger">1Error fetching data: {{ error.message }}</p>
     </div>
 </template>
 
