@@ -11,23 +11,41 @@ import AddBookView from '../views/AddBookView.vue';
 import CountBookAPI from '../views/CountBookAPI.vue';
 import GetAllBookAPI from '../views/GetAllBookAPI.vue';
 
-// 路由配置
 const routes = [
+  {
+    path: '/GetAllBookAPI',
+    name: 'GetAllBookAPI',
+    component: GetAllBookAPI
+  },
+  {
+    path: '/CountBookAPI',
+    name: 'CountBookAPI',
+    component: CountBookAPI
+  },
+  {
+    path: '/addbook',
+    name: 'AddBook',
+    component: AddBookView
+  },
   {
     path: '/',
     name: 'Home',
     component: HomeView
   },
   {
+    path: '/WeatherCheck',
+    name: 'WeatherCheck',
+    component: WeatherView
+  },
+  {
     path: '/about',
     name: 'About',
     component: AboutView,
     beforeEnter: (to, from, next) => {
-      // 路由守卫，检查用户是否已登录
       if (!isAuthenticated.value) {
-        next('/accessDenied'); // 如果未登录，跳转到 AccessDenied 页面
+        next('/accessDenied'); 
       } else {
-        next(); // 允许访问
+        next(); 
       }
     }
   },
@@ -50,30 +68,9 @@ const routes = [
     path: '/FireRegister',
     name: 'FireRegister',
     component: FirebaseRegisterView
-  },
-  {
-    path: '/WeatherCheck',
-    name: 'WeatherCheck',
-    component: WeatherView
-  },
-  {
-    path: '/addbook',
-    name: 'AddBook',
-    component: AddBookView
-  },
-  {
-    path: '/GetAllBookAPI',
-    name: 'GetAllBookAPI',
-    component: GetAllBookAPI
-  },
-  {
-    path: '/CountBookAPI',
-    name: 'CountBookAPI',
-    component: CountBookAPI
   }
 ];
 
-// 创建路由实例
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes // 传递路由配置
