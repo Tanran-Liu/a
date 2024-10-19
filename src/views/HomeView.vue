@@ -24,14 +24,14 @@ const submitForm = () => {
   validatePassword(true);
   validateConfirmPassword(true);
 
-  
+
 
   if (!errors.value.username && !errors.value.password && !errors.value.confirmPassword) {
     const users = JSON.parse(localStorage.getItem('users') || '[]');
     const userExists = users.find(user => user.username === formData.value.username);
 
     if (userExists) {
-      errors.value.username = 'Username already registered. Please choose a different one.';
+      errors.value.username = '1Username already registered. Please choose a different one.';
     } else {
       submittedCards.value.push({
         username: formData.value.username,
@@ -219,6 +219,4 @@ const validatePassword = (blur) => {
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
