@@ -13,20 +13,6 @@ const cors = require("cors")({origin: true});
 
 admin.initializeApp();
 
-exports.getRoute = functions.https.onRequest(async (req, res) => {
-  const {start, end} = req.body;
-  const accessToken = 'pk.eyJ1IjoidGxpdTAwNTgiLCJhIjoiY2x1N3B3emZrMDhmaTJ2bnIyeDkzb2lqZyJ9.ILfUF13AATr3Ud-oXgbZeg';
-
-  try {
-    const directionsUrl = `https://api.mapbox.com/directions/v5/mapbox/driving/${start.lng},${start.lat};${end.lng},${end.lat}?geometries=geojson&access_token=${accessToken}`;
-    const response = await axios.get(directionsUrl);
-    res.status(200).send(response.data);
-  } catch (error) {
-    console.error("Error fetching route:", error);
-    res.status(500).send("Failed to fetch route");
-  }
-});
-
 exports.countBooks = onRequest((req, res) => {
   cors(req, res, async () => {
     try {
