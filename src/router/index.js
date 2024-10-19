@@ -10,6 +10,14 @@ import WeatherView from '../views/WeatherView.vue';
 import AddBookView from '../views/AddBookView.vue';
 import CountBookAPI from '../views/CountBookAPI.vue';
 import GetAllBookAPI from '../views/GetAllBookAPI.vue';
+import { createRouter, createWebHistory } from 'vue-router';
+
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes: [
+    // your routes here
+  ]
+})
 
 const routes = [
   {
