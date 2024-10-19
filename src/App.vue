@@ -26,7 +26,7 @@ export default {
     </header>
 
     <main class="main-box">
-      <!--<LibraryRegistrationForm />-->
+      <!--<LibraryRegistrationForm1 />-->
       <!-- <JSONLab /> -->
       <router-view></router-view>
     </main>
