@@ -29,7 +29,7 @@
           <router-link to="/WeatherCheck" class="nav-link" active-class="active">Get Weather</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/addbook" class="nav-link" active-class="active">Add Book1</router-link>
+          <router-link to="/addbook" class="nav-link" active-class="active">Add Book</router-link>
         </li>
         <li class="nav-item">
           <router-link to="/GetAllBookAPI" class="nav-link" active-class="active">GetAllBookAPI</router-link>
