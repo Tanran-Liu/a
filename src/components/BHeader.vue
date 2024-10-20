@@ -47,6 +47,17 @@ const router = useRouter();
 
 const handleLogout = () => {
   isAuthenticated.value = false;  // 更新认证状态
+
+  // 清除持久化的认证状态
+  localStorage.removeItem('isAuthenticated');
+
+  // 重定向到登录页面
+  router.push('/LoginView');
+};
+
+/*
+const handleLogout = () => {
+  isAuthenticated.value = false;  // 更新认证状态
   localStorage.removeItem('isAuthenticated')
     .then((data) => {
       console.log("LogOut Successfull!")
@@ -56,6 +67,7 @@ const handleLogout = () => {
     });  // 清除持久化的认证状态
   router.push('/LoginView');  // 重定向到登录页面
 };
+*/
 </script>
 
 <style scoped>
