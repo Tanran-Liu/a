@@ -20,15 +20,17 @@ jobs:
 
     - name: Install dependencies
       run: npm ci
+      working-directory: ./a 
 
     - name: Build
       run: npm run build
+      working-directory: ./a 
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@4.1.4
       with:
         branch: gh-pages
-        folder: dist
+        folder: a/dist
 
 permissions:
   contents: write
