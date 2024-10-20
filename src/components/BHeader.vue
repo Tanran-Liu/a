@@ -5,7 +5,7 @@
     <header class="d-flex justify-content-center py-3">
       <ul class="nav nav-pills">
         <li class="nav-item">
-          <router-link to="/" class="nav-link" active-class="active" aria-current="page">Home (Week 5)</router-link>
+          <router-link to="/" class="nav-link" active-class="active" aria-current="page">aHome (Week 5)</router-link>
         </li>
         <li class="nav-item">
           <router-link to="/about" class="nav-link" active-class="active">About</router-link>
@@ -48,11 +48,11 @@ const router = useRouter();
 const handleLogout = () => {
   isAuthenticated.value = false;  // 更新认证状态
   localStorage.removeItem('isAuthenticated')
-  .then((data) => {
-        console.log("LogOut Successfull!")
-        router.push("/")
+    .then((data) => {
+      console.log("LogOut Successfull!")
+      router.push("/")
     }).catch((error) => {
-        console.log(error.code);
+      console.log(error.code);
     });  // 清除持久化的认证状态
   router.push('/LoginView');  // 重定向到登录页面
 };
@@ -74,6 +74,7 @@ const handleLogout = () => {
   background-color: var(--bs-dark);
   border-color: var(--bs-gray);
 }
+
 .form-control-dark:focus {
   color: #fff;
   background-color: var(--bs-dark);
